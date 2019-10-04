@@ -1,4 +1,4 @@
-# Simple REST CRUD Application
+# Golang Docker simple REST CRUD Application
 
 This app is an example of blog manager with simple functionalities.
 
