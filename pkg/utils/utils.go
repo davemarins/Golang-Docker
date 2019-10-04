@@ -42,9 +42,11 @@ func ParseBody(r *http.Request, x interface{}) {
 }
 
 func GetJWTSecret() []byte {
+	// put your secret here
 	return []byte("oi2K2wax3RX7Gi6bef7PBR2OuZQt1UMUDTnKiqC5JCsToMbfBUgh52l2e9CRyF7AjZnCXMkG8o6mR4E3n2QyktBUZ7unyBVx0Ai")
 }
 
 func GetIssuer() string {
+	// put your issuer name for jwt here
 	return "simple-REST"
 }

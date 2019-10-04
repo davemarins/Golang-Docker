@@ -1,15 +1,30 @@
 # Simple REST CRUD Application
 
+This app is an example of blog manager with simple functionalities.
+
+### Install
+
+Make sure to have Go installed in your computer. More on https://golang.org/dl/
+
 Clone this repository into your go home path.
 
 > git clone https://github.com/davidemarino0508/Golang-Docker
 
-> glide install
+If you don't have glide installed, make sure to do that with
 
-> go run main.go
+> curl https://glide.sh/get | sh
 
-Future development: dockerize a web app with Angular frontend.
+Now you're able to install all dependencies and run the app
 
-> docker-compose build
+> glide install && cd cmd/main/ && go run main.go
 
-> docker-compose up
+### Config
+
+Serving port is in main.go. <br>
+JWT secret and issuer name is in utils.go. <br>
+DB configuration is in app.go <br>
+All non-authenticated API have '/public/' for the sake of simplicity. See more in auth.go. <br>
+
+### Future development
+
+Dockerization is about to come real soon. The Angular app is about to be developed.

@@ -10,6 +10,7 @@ var (
 )
 
 func Connect() {
+	// use your local configuration for the testing db (this case is mysql)
 	d, err := gorm.Open("mysql", "davemarins:Computer1!@/website?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
