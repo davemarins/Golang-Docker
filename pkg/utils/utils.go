@@ -2,9 +2,10 @@ package utils
 
 import (
 	"encoding/json"
-	"github.com/dgrijalva/jwt-go"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 // IMPORTANT: You need to export the fields in all objects by capitalizing the first letter in the field name.

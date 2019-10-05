@@ -1,10 +1,11 @@
 package models
 
 import (
+	"Golang-Docker/pkg/config"
+	"log"
+
 	"github.com/jinzhu/gorm"
 	"golang.org/x/crypto/bcrypt"
-	"log"
-	"simple-REST/pkg/config"
 )
 
 var dbUserClient *gorm.DB

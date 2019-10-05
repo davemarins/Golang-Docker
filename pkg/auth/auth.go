@@ -1,12 +1,13 @@
 package auth
 
 import (
+	"Golang-Docker/pkg/utils"
 	"context"
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
 	"net/http"
-	"simple-REST/pkg/utils"
 	"strings"
+
+	"github.com/dgrijalva/jwt-go"
 )
 
 var JwtAuthentication = func(next http.Handler) http.Handler {

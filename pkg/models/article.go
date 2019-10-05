@@ -1,8 +1,9 @@
 package models
 
 import (
+	"Golang-Docker/pkg/config"
+
 	"github.com/jinzhu/gorm"
-	"simple-REST/pkg/config"
 )
 
 var dbArticleClient *gorm.DB

@@ -16,7 +16,11 @@ If you don't have glide installed, make sure to do that with
 
 Now you're able to install all dependencies and run the app
 
-> glide install && cd cmd/main/ && go run main.go
+> export GOPATH=/path/to/home/folder
+> export GOBIN=$GOPATH/bin
+> export PATH=$PATH:$GOPATH/bin
+> glide install
+> cd cmd/main/ && go run main.go
 
 ### Config
 

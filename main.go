@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"net/http"
+
+	"Golang-Docker/pkg/auth"
+	"Golang-Docker/pkg/routes"
+
 	"github.com/gorilla/mux"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/rs/cors"
-	"log"
-	"net/http"
-	"simple-REST/pkg/auth"
-	"simple-REST/pkg/routes"
 )
 
 func main() {

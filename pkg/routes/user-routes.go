@@ -1,8 +1,9 @@
 package routes
 
 import (
+	"Golang-Docker/pkg/controllers"
+
 	"github.com/gorilla/mux"
-	"simple-REST/pkg/controllers"
 )
 
 var RegisterUserRoutes = func(router *mux.Router) {

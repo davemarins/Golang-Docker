@@ -1,17 +1,18 @@
 package controllers
 
 import (
+	"Golang-Docker/pkg/models"
+	"Golang-Docker/pkg/utils"
 	"encoding/json"
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
-	"github.com/gorilla/mux"
-	"golang.org/x/crypto/bcrypt"
 	"net/http"
-	"simple-REST/pkg/models"
-	"simple-REST/pkg/utils"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/dgrijalva/jwt-go"
+	"github.com/gorilla/mux"
+	"golang.org/x/crypto/bcrypt"
 )
 
 func NewUser(w http.ResponseWriter, r *http.Request) {

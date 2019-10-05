@@ -1,8 +1,23 @@
-hash: 333b3cbe05da638d0d83b3f1b43f84d609b2c57ce3925255645de3e253cf47c7
-updated: 2019-05-14T12:47:23.754102293+05:30
+hash: 26a9d4cf24ef1a635e6f7a3d17b67e9fbb4e8237244d33acf63317fa530255ff
+updated: 2019-10-05T14:23:27.869224+02:00
 imports:
+- name: github.com/dgrijalva/jwt-go
+  version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
+- name: github.com/go-sql-driver/mysql
+  version: 14bb9c0fc20fc57f6c3339adeac7f469768d9524
 - name: github.com/gorilla/mux
   version: c5c6c98bc25355028a63748a498942a6398ccd22
 - name: github.com/jinzhu/gorm
   version: b7156195f7f3415f97c20abbd6aff894b847fee8
+  subpackages:
+  - dialects/mysql
+- name: github.com/jinzhu/inflection
+  version: f5c5f50e6090ae76a29240b61ae2a90dd810112e
+- name: github.com/rs/cors
+  version: db0fe48135e83b5812a5a31be0eea66984b1b521
+- name: golang.org/x/crypto
+  version: 34f69633bfdcf9db92f698f8487115767eebef81
+  subpackages:
+  - bcrypt
+  - blowfish
 testImports: []

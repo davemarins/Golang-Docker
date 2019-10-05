@@ -1,13 +1,14 @@
 package controllers
 
 import (
+	"Golang-Docker/pkg/models"
+	"Golang-Docker/pkg/utils"
 	"encoding/json"
 	"fmt"
-	"github.com/gorilla/mux"
 	"net/http"
-	"simple-REST/pkg/models"
-	"simple-REST/pkg/utils"
 	"strconv"
+
+	"github.com/gorilla/mux"
 )
 
 func NewArticle(w http.ResponseWriter, r *http.Request) {
