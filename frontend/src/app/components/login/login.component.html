@@ -1,0 +1,9 @@
+<nb-card>
+    <nb-card-header>Login component</nb-card-header>
+    <nb-card-body class="example-items-col">
+        <input type="text" shape="semi-round" nbInput fullWidth status="info" [(ngModel)]="email" placeholder="Username">
+        <input type="text" shape="semi-round" nbInput fullWidth status="info" [(ngModel)]="password" placeholder="Password">
+        <button nbButton shape="semi-round" status="info" (click)="submitLogin()">Login</button>
+        <button nbButton shape="semi-round" status="info">Forgot password?</button>
+    </nb-card-body>
+</nb-card>

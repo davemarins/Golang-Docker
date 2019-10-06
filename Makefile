@@ -4,3 +4,10 @@ docker:
 
 build:
 	go build -a -o main
+	chmod +x main
+
+run:
+	./main
+
+angular:
+	cd frontend && ng build --prod --aot && cd ..
