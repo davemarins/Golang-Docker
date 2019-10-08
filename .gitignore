@@ -22,3 +22,6 @@ vendor/
 
 # Executable file
 main
+
+# Environment
+.env
