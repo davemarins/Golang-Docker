@@ -2,6 +2,7 @@ package models
 
 import (
 	"Golang-Docker/pkg/config"
+	"github.com/microcosm-cc/bluemonday"
 
 	"github.com/jinzhu/gorm"
 )
@@ -25,6 +26,13 @@ func init() {
 }
 
 func (a *Article) NewArticle() *Article {
+	policy := bluemonday.UGCPolicy()
+	a.Description = policy.Sanitize(a.Description)
+	a.Title = policy.Sanitize(a.Title)
+	tempUser, _ := GetUserById(a.AuthorId)
+	if tempUser.Email == "" {
+		return nil
+	}
 	dbArticleClient.NewRecord(a)
 	dbArticleClient.Create(&a)
 	return a
@@ -44,8 +52,13 @@ func GetArticleById(id int64) (*Article, *gorm.DB) {
 
 func GetArticlesByPageNumber(page int64) []Article {
 	var wantedArticles []Article
-	dbArticleClient.Order("created_at desc").Limit(articlesPerPage).Find(&wantedArticles)
-	return wantedArticles
+	if page < 1 {
+		return nil
+	} else {
+		offset := (page - 1) * int64(articlesPerPage)
+		dbArticleClient.Order("created_at desc").Offset(offset).Limit(articlesPerPage).Find(&wantedArticles)
+		return wantedArticles
+	}
 }
 
 func DeleteArticleById(id int64) Article {

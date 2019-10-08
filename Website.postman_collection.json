@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "eebda659-e70d-4219-b4c3-00525aa27341",
+		"_postman_id": "1ca076fa-2650-4ea8-9e82-6833722d39d3",
 		"name": "Website",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"davidemarino0508@gmail.com\",\n    \"password\": \"Computer1!\"\n}"
+					"raw": "{\n    \"email\": \"davidemarino0508@gmail.com\",\n    \"password\": \"Computer1!\",\n    \"totp_code\": \"125542\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/public/user/login/",
@@ -45,14 +45,10 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDE5ODM3NiwicmVmcmVzaF9hdCI6MTU3MDE5NjU3NiwiZXhwIjoxNTcwMTk4Mzc2LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDE5NDc3NiwiaXNzIjoic2ltcGxlLVJFU1QifQ.okPTXNWm-GQtS0Jcgu3tsJSfKLHtkhTNpzrMfxzKi1SAVLlEUUGSAyI4Y0L1fkCQy5tyQQCUzxU3keDFRSO6lQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDUzMDEwNCwicmVmcmVzaF9hdCI6MTU3MDUyODMwNCwiZXhwIjoxNTcwNTMwMTA0LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDUyNjUwNCwiaXNzIjoic2ltcGxlLVJFU1QifQ.CSzUkGcEyeGtk6RiHLI2GlYtDRE06qbmUWjbKNfQbhPA5jK4Ii2vXTjT0ngB5DWUfD7dTcmWLiceJMdRjTYhfg",
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "http://localhost:8080/user/all/",
 					"protocol": "http",
@@ -79,11 +75,16 @@
 						"name": "Content-Type",
 						"value": "application/json",
 						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDU1MDk5MCwicmVmcmVzaF9hdCI6MTU3MDU0OTE5MCwiZXhwIjoxNTcwNTUwOTkwLCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDU0NzM5MCwiaXNzIjoic2ltcGxlLVJFU1QifQ.b3mYGcAIEb-QZ_2bk9K13PeYNyLnl_0hO6GXOk_tajN5ajpHsKYdvvVb9XgrANkD0WDL_YmK_9Pwkdo0milx-Q",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"first_name\": \"Pinco\",\n\t\"last_name\": \"Pallino\",\n\t\"email\": \"pincopallino@gmail.com\",\n\t\"password\": \"Computer1!\",\n\t\"role\": \"Editor\"\n}"
+					"raw": "{\n\t\"first_name\": \"Davide\",\n\t\"last_name\": \"Marino\",\n\t\"email\": \"davidemarino0508@gmail.com\",\n\t\"password\": \"Computer1!\",\n\t\"role\": \"Admin\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/user/",
@@ -111,10 +112,6 @@
 						"type": "text"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "http://localhost:8080/user/1",
 					"protocol": "http",
@@ -229,7 +226,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDE5ODM3NiwicmVmcmVzaF9hdCI6MTU3MDE5NjU3NiwiZXhwIjoxNTcwMTk4Mzc2LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDE5NDc3NiwiaXNzIjoic2ltcGxlLVJFU1QifQ.okPTXNWm-GQtS0Jcgu3tsJSfKLHtkhTNpzrMfxzKi1SAVLlEUUGSAyI4Y0L1fkCQy5tyQQCUzxU3keDFRSO6lQ",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDU1MDk5MCwicmVmcmVzaF9hdCI6MTU3MDU0OTE5MCwiZXhwIjoxNTcwNTUwOTkwLCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDU0NzM5MCwiaXNzIjoic2ltcGxlLVJFU1QifQ.b3mYGcAIEb-QZ_2bk9K13PeYNyLnl_0hO6GXOk_tajN5ajpHsKYdvvVb9XgrANkD0WDL_YmK_9Pwkdo0milx-Q",
 						"type": "text"
 					},
 					{
@@ -241,7 +238,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"author_id\": \"1\",\n\t\"content\": \"<h1>Titolo grosso dell'articolo</h1><h3>Sottotitolo più piccolo</h3><p>Paragrafo d'esempio</p>\",\n\t\"description\": \"Uso di webserver in Go\",\n\t\"title\": \"Il mio primo articolo\"\n}"
+					"raw": "{\n\t\"author_id\": \"3\",\n\t\"content\": \"<h1>Titolo grosso dell'articolo</h1><h3>Sottotitolo più piccolo</h3><p>Paragrafo d'esempio</p>\",\n\t\"description\": \"Uso di webserver in Go\",\n\t\"title\": \"Il mio dodicesimo articolo\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/article/",
@@ -263,10 +260,6 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "http://localhost:8080/public/article/10",
 					"protocol": "http",
@@ -356,20 +349,16 @@
 			"response": []
 		},
 		{
-			"name": "Get All Articles",
+			"name": "All Articles",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDE5MTU4OSwicmVmcmVzaF9hdCI6MTU3MDE4OTc4OSwiZXhwIjoxNTcwMTkxNTg5LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDE4Nzk4OSwiaXNzIjoic2ltcGxlLVJFU1QifQ.yKsgEQiqgZOLK0cOFxJH3yLEfLEF00qoMvaJF5_53P_xBUMmOk27lnoaT2SUpxR1UwxGTLQCRZ0gnouv6yEpAA",
-						"type": "text"
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDUzMDEwNCwicmVmcmVzaF9hdCI6MTU3MDUyODMwNCwiZXhwIjoxNTcwNTMwMTA0LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDUyNjUwNCwiaXNzIjoic2ltcGxlLVJFU1QifQ.CSzUkGcEyeGtk6RiHLI2GlYtDRE06qbmUWjbKNfQbhPA5jK4Ii2vXTjT0ngB5DWUfD7dTcmWLiceJMdRjTYhfg"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "http://localhost:8080/article/all/",
 					"protocol": "http",
@@ -391,12 +380,8 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://localhost:8080/public/article/page/1",
+					"raw": "http://localhost:8080/public/article/page/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -406,11 +391,223 @@
 						"public",
 						"article",
 						"page",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\": \"Aldo\",\n\t\"last_name\": \"Baglio\",\n\t\"email\": \"aldo.giovanni.giacomo@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/public/subscriber/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"public",
+						"subscriber",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Subscriber",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDU0MzU5NiwicmVmcmVzaF9hdCI6MTU3MDU0MTc5NiwiZXhwIjoxNTcwNTQzNTk2LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDUzOTk5NiwiaXNzIjoic2ltcGxlLVJFU1QifQ.9n-NzSVaen8zY-jhjMVgqPXycML99-EVuhLkoU5gCj16jhMki6Rne2Nl25mbFPqg6vHlAvcNeu9nuqxMpxLsbw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subscriber/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subscriber",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Subscriber",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDU0MzU5NiwicmVmcmVzaF9hdCI6MTU3MDU0MTc5NiwiZXhwIjoxNTcwNTQzNTk2LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDUzOTk5NiwiaXNzIjoic2ltcGxlLVJFU1QifQ.9n-NzSVaen8zY-jhjMVgqPXycML99-EVuhLkoU5gCj16jhMki6Rne2Nl25mbFPqg6vHlAvcNeu9nuqxMpxLsbw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"aldo.baglio@gmail.com\",\n\t\"newsletter\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subscriber/13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subscriber",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Subscriber",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDU0MzU5NiwicmVmcmVzaF9hdCI6MTU3MDU0MTc5NiwiZXhwIjoxNTcwNTQzNTk2LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDUzOTk5NiwiaXNzIjoic2ltcGxlLVJFU1QifQ.9n-NzSVaen8zY-jhjMVgqPXycML99-EVuhLkoU5gCj16jhMki6Rne2Nl25mbFPqg6vHlAvcNeu9nuqxMpxLsbw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\": \"Michela\",\n\t\"last_name\": \"Loverier\",\n\t\"email\": \"mi.lo@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/subscriber/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subscriber",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Subscribers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDUzODE2NywicmVmcmVzaF9hdCI6MTU3MDUzNjM2NywiZXhwIjoxNTcwNTM4MTY3LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDUzNDU2NywiaXNzIjoic2ltcGxlLVJFU1QifQ.E2NcibDtHTq-mET4bnRtzvEH1qMm96WpauTKgkz02qhL3OIvdvmdKwXeCGSBmc5BbMe2davxxQYv553vNH9dzw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/subscriber/all/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subscriber",
+						"all",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Subscriber By Page Number",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkZW1hcmlubzA1MDhAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiZXhwaXJlc19hdCI6MTU3MDUzODE2NywicmVmcmVzaF9hdCI6MTU3MDUzNjM2NywiZXhwIjoxNTcwNTM4MTY3LCJqdGkiOiJkYXZpZGVtYXJpbm8wNTA4QGdtYWlsLmNvbSIsImlhdCI6MTU3MDUzNDU2NywiaXNzIjoic2ltcGxlLVJFU1QifQ.E2NcibDtHTq-mET4bnRtzvEH1qMm96WpauTKgkz02qhL3OIvdvmdKwXeCGSBmc5BbMe2davxxQYv553vNH9dzw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/subscriber/page/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"subscriber",
+						"page",
 						"1"
 					]
 				}
 			},
 			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

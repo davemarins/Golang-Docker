@@ -16,6 +16,9 @@ import { NbInputModule } from '@nebular/theme';
 
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { SubscribersComponent } from './components/subscribers/subscribers.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { MailboxComponent } from './components/mailbox/mailbox.component';
 
 import { TokenInterceptor } from './services/token.interceptor';
 
@@ -23,7 +26,10 @@ import { TokenInterceptor } from './services/token.interceptor';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SubscribersComponent,
+    ArticlesComponent,
+    MailboxComponent
   ],
   imports: [
     FormsModule,
@@ -31,7 +37,7 @@ import { TokenInterceptor } from './services/token.interceptor';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'dark' }),
+    NbThemeModule.forRoot({ name: 'light' }),
     NbLayoutModule,
     NbEvaIconsModule,
     NbIconModule,

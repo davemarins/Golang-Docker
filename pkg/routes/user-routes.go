@@ -15,3 +15,6 @@ var RegisterUserRoutes = func(router *mux.Router) {
 	router.HandleFunc("/public/user/login/", controllers.LoginUser).Methods("POST")
 	router.HandleFunc("/user/refresh/", controllers.RefreshUser).Methods("POST")
 }
+
+// TODO recaptcha needed for:
+// LoginUser

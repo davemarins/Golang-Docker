@@ -1,8 +1,10 @@
-hash: 26a9d4cf24ef1a635e6f7a3d17b67e9fbb4e8237244d33acf63317fa530255ff
-updated: 2019-10-05T14:23:27.869224+02:00
+hash: c7a7e90357654e6ef85ff51335b5c4978fb27ec9d500d2d774abee1408dc49f6
+updated: 2019-10-08T17:41:36.60737+02:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
+- name: github.com/dpapathanasiou/go-recaptcha
+  version: be5090b17804c90a577d345b6d67acbf01dc90ed
 - name: github.com/go-sql-driver/mysql
   version: 14bb9c0fc20fc57f6c3339adeac7f469768d9524
 - name: github.com/gorilla/mux
@@ -13,11 +15,22 @@ imports:
   - dialects/mysql
 - name: github.com/jinzhu/inflection
   version: f5c5f50e6090ae76a29240b61ae2a90dd810112e
+- name: github.com/microcosm-cc/bluemonday
+  version: 506f3da9b7c86d737e91f16b7431df8635871552
 - name: github.com/rs/cors
   version: db0fe48135e83b5812a5a31be0eea66984b1b521
+- name: github.com/xlzd/gotp
+  version: c8557ba2c11930b3069b31bfd80f38cc774cc68a
 - name: golang.org/x/crypto
   version: 34f69633bfdcf9db92f698f8487115767eebef81
   subpackages:
   - bcrypt
   - blowfish
+- name: golang.org/x/net
+  version: 72f939374954d0a1b2a1e27dcda950e2724dd5c1
+  subpackages:
+  - html
+  - html/atom
+- name: gopkg.in/gomail.v2
+  version: 81ebce5c23dfd25c6c67194b37d3dd3f338c98b1
 testImports: []

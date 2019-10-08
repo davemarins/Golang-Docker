@@ -9,3 +9,12 @@ import:
 - package: golang.org/x/crypto
   subpackages:
   - bcrypt
+- package: github.com/dpapathanasiou/go-recaptcha
+- package: gopkg.in/gomail.v2
+  version: ~2.0.0
+- package: github.com/microcosm-cc/bluemonday
+  version: ~1.0.2
+- package: golang.org/x/net
+  subpackages:
+  - html
+- package: github.com/xlzd/gotp

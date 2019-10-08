@@ -2,10 +2,13 @@
 
   <nb-layout-header fixed>
     <button nbButton shape="semi-round" status="info" routerLink="login" *ngIf="!loggedIn">Login</button>
+    <button nbButton shape="semi-round" status="info" routerLink="home" *ngIf="loggedIn">Home</button>
+    <button nbButton shape="semi-round" status="info" routerLink="articles" *ngIf="loggedIn">Articles</button>
+    <button nbButton shape="semi-round" status="info" routerLink="subscribers" *ngIf="loggedIn">Subscribers</button>
+    <button nbButton shape="semi-round" status="danger" (click)="removeToken()" *ngIf="loggedIn">Logout</button>
   </nb-layout-header>
 
   <nb-layout-column>
-    <p>Something in the middle</p>
     <router-outlet></router-outlet>
   </nb-layout-column>
 

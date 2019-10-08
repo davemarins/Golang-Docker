@@ -5,6 +5,7 @@ import (
 	"Golang-Docker/pkg/utils"
 	"encoding/json"
 	"fmt"
+	"github.com/xlzd/gotp"
 	"net/http"
 	"strconv"
 	"strings"
@@ -19,9 +20,13 @@ func NewUser(w http.ResponseWriter, r *http.Request) {
 	newUser := &models.User{}
 	utils.ParseBody(r, newUser)
 	u := newUser.NewUser()
-	result, _ := json.Marshal(u)
-	w.WriteHeader(http.StatusOK)
-	w.Write(result)
+	if u == nil {
+		w.WriteHeader(http.StatusBadRequest)
+	} else {
+		result, _ := json.Marshal(u)
+		w.WriteHeader(http.StatusOK)
+		w.Write(result)
+	}
 }
 
 func GetUsers(w http.ResponseWriter, r *http.Request) {
@@ -102,7 +107,7 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 }
 
 func LoginUser(w http.ResponseWriter, r *http.Request) {
-	var loginUser = &models.User{}
+	var loginUser = &models.LoginUser{}
 	utils.ParseBody(r, loginUser)
 	userDetails, _ := models.GetUserByEmail(loginUser.Email)
 	if userDetails.Email == "" {
@@ -112,10 +117,19 @@ func LoginUser(w http.ResponseWriter, r *http.Request) {
 	currentPassword := []byte(userDetails.Password)
 	givenPassword := []byte(loginUser.Password)
 	err := bcrypt.CompareHashAndPassword(currentPassword, givenPassword)
-	if userDetails.Email == loginUser.Email && err == nil {
+
+	// TOTP for LMT4URYNZKEWZRAA - Default secret for the current dependecy repo
+	// N.B. secret length is 16, so use gotp.RandomSecret(16)
+	totp := gotp.NewDefaultTOTP(userDetails.Secret)
+	currentTOTP := totp.At(int(time.Now().Unix()))
+	prev30sec := time.Now().Unix() - 30
+	next30sec := time.Now().Unix() + 30
+	prevTOTP := totp.At(int(prev30sec))
+	nextTOTP := totp.At(int(next30sec))
+
+	if (loginUser.Code == currentTOTP || loginUser.Code == prevTOTP || loginUser.Code == nextTOTP) && userDetails.Email == loginUser.Email && err == nil {
 		expirationTime := time.Now().Add(1 * time.Hour)
 		refreshTime := time.Now().Add(30 * time.Minute)
-		// utils.GetJWTSecret()
 		claims := &utils.IdentityClaims{
 			Username:  userDetails.Email,
 			Role:      userDetails.Role,

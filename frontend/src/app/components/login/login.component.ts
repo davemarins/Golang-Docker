@@ -13,11 +13,13 @@ export class LoginComponent implements OnInit {
 
   public form = {
     email: null,
-    password: null
+    password: null,
+    captcha: null
   };
 
   public email: string;
   public password: string;
+  public captcha: string;
   public error = null;
   public success = null;
 

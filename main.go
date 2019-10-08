@@ -13,11 +13,16 @@ import (
 	"github.com/rs/cors"
 )
 
+// control.davidemarino.io
+// 6LdPQbwUAAAAAK4eksVH3mdDoq8V1xvMvzMFVun4 - Client
+// 6LdPQbwUAAAAAP8GzkRl-0MQkV3H-_hdNeRpiih8 - Server
+
 func main() {
 	r := mux.NewRouter()
 	r.Use(auth.JwtAuthentication)
 	routes.RegisterUserRoutes(r)
 	routes.RegisterArticleRoutes(r)
+	routes.RegisterSubscribersRoutes(r)
 	http.Handle("/", r)
 	handler := cors.Default().Handler(r)
 	fmt.Println("Starting web server...")

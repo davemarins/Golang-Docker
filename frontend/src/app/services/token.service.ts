@@ -5,10 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class TokenService {
 
-  private iss = {
-    login: 'http://localhost:8000/public/user/login/'
-  }
-
   constructor() { }
 
   handle(token) {
@@ -40,14 +36,14 @@ export class TokenService {
   }
 
   isValid() {
-    const token = this.get();
-    if(token) {
-      const payload = this.payload(token);
-      if(payload) {
-        return Object.values(this.iss).indexOf(payload.iss) > -1 ? true: false;
-      }
+    var expires_in = this.getExpireDate();
+    var now = Math.floor(new Date().getTime() / 1000);
+    if(expires_in == "" || expires_in == null || parseInt(this.getExpireDate()) <= now) {
+      this.remove();
+      return false;
+    } else {
+      return true;
     }
-    return false;
   }
 
   payload(token) {
