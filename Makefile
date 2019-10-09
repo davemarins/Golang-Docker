@@ -10,4 +10,4 @@ run:
 	./main
 
 frontend:
-	cd Angular/Thalia && ng build --prod --aot && cd ..
+	cd Angular/frontend && ng build --prod --aot && cd ..
