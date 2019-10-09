@@ -22,6 +22,9 @@ vendor/
 
 # Executable file
 main
+cloud_sql_proxy
 
 # Environment
 .env
+.env.notes
+.db

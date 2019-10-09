@@ -15,7 +15,7 @@ type Subscriber struct {
 	FirstName  string `gorm:""json:"first_name"`
 	LastName   string `gorm:""json:"last_name"`
 	Email      string `gorm:""json:"email"`
-	Newsletter bool   `gorm:"default:'false'"`
+	Newsletter bool   `gorm:""json:"newsletter"`
 }
 
 func init() {

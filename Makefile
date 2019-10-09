@@ -9,5 +9,5 @@ build:
 run:
 	./main
 
-angular:
-	cd frontend && ng build --prod --aot && cd ..
+frontend:
+	cd Angular/Thalia && ng build --prod --aot && cd ..

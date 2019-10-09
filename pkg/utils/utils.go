@@ -2,10 +2,12 @@ package utils
 
 import (
 	"encoding/json"
+	"fmt"
+	"github.com/dgrijalva/jwt-go"
+	"github.com/subosito/gotenv"
 	"io/ioutil"
 	"net/http"
-
-	"github.com/dgrijalva/jwt-go"
+	"os"
 )
 
 // IMPORTANT: You need to export the fields in all objects by capitalizing the first letter in the field name.
@@ -23,6 +25,13 @@ type TokenResponse struct {
 	Token     string
 	Expires   int64
 	Refreshes int64
+}
+
+func init() {
+	err := gotenv.Load()
+	if err != nil {
+		fmt.Println("Fatal error: cannot load environment variables")
+	}
 }
 
 func Message(status bool, message string) map[string]interface{} {
@@ -44,10 +53,10 @@ func ParseBody(r *http.Request, x interface{}) {
 
 func GetJWTSecret() []byte {
 	// put your secret here
-	return []byte("oi2K2wax3RX7Gi6bef7PBR2OuZQt1UMUDTnKiqC5JCsToMbfBUgh52l2e9CRyF7AjZnCXMkG8o6mR4E3n2QyktBUZ7unyBVx0Ai")
+	return []byte(os.Getenv("JWT_SECRET"))
 }
 
 func GetIssuer() string {
 	// put your issuer name for jwt here
-	return "simple-REST"
+	return os.Getenv("ISSUER_NAME")
 }

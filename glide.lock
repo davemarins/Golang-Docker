@@ -1,5 +1,5 @@
-hash: c7a7e90357654e6ef85ff51335b5c4978fb27ec9d500d2d774abee1408dc49f6
-updated: 2019-10-08T17:41:36.60737+02:00
+hash: 680fc3c03d6c3e0c55f01ce70a95b056713970eaf3f1c2ceb1c3dddb650460fd
+updated: 2019-10-09T16:19:46.104482+02:00
 imports:
 - name: github.com/dgrijalva/jwt-go
   version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
@@ -19,6 +19,8 @@ imports:
   version: 506f3da9b7c86d737e91f16b7431df8635871552
 - name: github.com/rs/cors
   version: db0fe48135e83b5812a5a31be0eea66984b1b521
+- name: github.com/subosito/gotenv
+  version: 2ef7124db659d49edac6aa459693a15ae36c671a
 - name: github.com/xlzd/gotp
   version: c8557ba2c11930b3069b31bfd80f38cc774cc68a
 - name: golang.org/x/crypto

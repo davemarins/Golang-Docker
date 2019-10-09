@@ -33,6 +33,20 @@ If you want to install dependencies, type
 
 > glide get github.com/foo/bar
 
+You should also use a .env file in order to load all configurations which you don't want to commit and push into a
+public repository. In this code provided, your .env file should look something like this:
+
+```
+MYSQL_USERNAME=YOUR-USERNAME
+MYSQL_PASSWORD=YOUR-PASSWORD
+MYSQL_DATABASE=YOUR-DATABASE-NAME
+JWT_SECRET=YOUR-SECRET
+ISSUER_NAME=YOUR-ISSUER-NAME
+```
+
 ### Future development
 
-Dockerization is about to come real soon. The Angular app is about to be developed.
+Dockerization for both frontend and backend is present.<br>
+Dockerfile are meant to be used in a production environment, not in a local one.<br>
+A CI/CD example is coming soon for GKE (backend) and GAE (frontend).
+Environment file should be modified in order to have staging, testing and production environments ready to be operative.

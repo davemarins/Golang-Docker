@@ -18,3 +18,5 @@ import:
   subpackages:
   - html
 - package: github.com/xlzd/gotp
+- package: github.com/subosito/gotenv
+  version: ~1.2.0
