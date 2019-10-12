@@ -27,4 +27,5 @@ cloud_sql_proxy
 # Environment
 .env
 .env.notes
+.env.prod
 .db

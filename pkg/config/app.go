@@ -21,7 +21,7 @@ func init() {
 
 func Connect() {
 	// use your local configuration for the testing db (this case is mysql)
-	d, err := gorm.Open("mysql", os.Getenv("MYSQL_USERNAME")+":"+os.Getenv("MYSQL_PASSWORD")+"/"+os.Getenv("MYSQL_DATABASE")+"?charset=utf8&parseTime=True&loc=Local")
+	d, err := gorm.Open("mysql", os.Getenv("MYSQL_USERNAME")+":"+os.Getenv("MYSQL_PASSWORD")+"@("+os.Getenv("MYSQL_HOST")+")/"+os.Getenv("MYSQL_DATABASE")+"?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		panic(err)
 	}

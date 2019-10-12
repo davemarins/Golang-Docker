@@ -16,11 +16,12 @@ import (
 func main() {
 	r := mux.NewRouter()
 	r.Use(auth.JwtAuthentication)
+	routes.RegisterStatusRoutes(r)
 	routes.RegisterUserRoutes(r)
 	routes.RegisterArticleRoutes(r)
 	routes.RegisterSubscribersRoutes(r)
 	http.Handle("/", r)
 	handler := cors.Default().Handler(r)
 	fmt.Println("Starting web server...")
-	log.Fatal(http.ListenAndServe("localhost:8080", handler))
+	log.Fatal(http.ListenAndServe(":80", handler))
 }

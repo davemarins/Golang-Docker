@@ -30,7 +30,10 @@ Angular/
 vendor/
 
 # Other files
+.db
 .env
+.env.notes
 main
+Makefile
 README.md
 Website.postman_collection.json

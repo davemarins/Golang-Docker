@@ -1,6 +1,9 @@
+.idea
 .gitignore
 .DS_Store
 Website.postman_collection.json
+cloud_sql_proxy
+main
 README.md
 Angular/
 vendor/

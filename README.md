@@ -44,9 +44,7 @@ JWT_SECRET=YOUR-SECRET
 ISSUER_NAME=YOUR-ISSUER-NAME
 ```
 
-### Future development
-
-Dockerization for both frontend and backend is present.<br>
-Dockerfile are meant to be used in a production environment, not in a local one.<br>
-A CI/CD example is coming soon for GKE (backend) and GAE (frontend).
-Environment file should be modified in order to have staging, testing and production environments ready to be operative.
+```.env``` and ```.env.prod``` should be present in order to change environment.
+CI/CD integration has been made through GCP Cloud Build and Container Registry. Once you type ```make deploy```
+if configured in CGP the image is built, published into the Container Registry and the same image is substituted
+in all running VM instances of the group (so that downtime is not present).
