@@ -23,5 +23,5 @@ func main() {
 	http.Handle("/", r)
 	handler := cors.Default().Handler(r)
 	fmt.Println("Starting web server...")
-	log.Fatal(http.ListenAndServe(":80", handler))
+	log.Fatal(http.ListenAndServe(":8080", handler))
 }

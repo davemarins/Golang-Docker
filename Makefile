@@ -15,6 +15,11 @@ build:
 run:
 	./main
 
+install:
+	glide install
+	cd Angular/frontend/
+	npm install
+
 deploy:
 	gcloud builds submit --tag eu.gcr.io/<PROJECT-NAME>/<CONTAINER-IMAGE-NAME>
 	gcloud compute instances update-container <VM-INSTANCE-NAME>/<VM-INSTANCE-GROUP-NAME>
