@@ -16,6 +16,7 @@ func init() {
 	err := gotenv.Load()
 	if err != nil {
 		fmt.Println("Fatal error: cannot load environment variables")
+		return
 	}
 }
 
